@@ -1,0 +1,16 @@
+1. Purchase all parts as listed in the BillOfMaterials.xls.
+
+2. Open Elvis1.0_LaserCut2d.3dm with Rhino 5.0 or above.
+
+3. All parts are tabulated into material thicknesses. The file is in millimetres.
+
+4. Nest the parts to suit the material size/laser cutter bed size available and cut them.
+
+5. Keep the parts grouped as tabulated in the file, to prevent assembly insanity.
+
+6. Open Elvis1.0_Assembly3d.3dm, and start assembling per group. You will need small philips head screwdrivers, tweezers, plastic weld, pliars, electrical insulation tape, etc.
+
+7. Before putting any servos into the assembly, please read through the SettingUpServos.txt included in the hardware folder.
+
+8. Nearly all parts in the Rhino file are named as per their name in the bill of materials. This should help identify the bolts, belts, bearings, etc.
+

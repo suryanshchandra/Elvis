@@ -1,0 +1,67 @@
+***	LICENCES & DISCLAIMER ***
+
+    The instructions will help you setup your electronic hardware for use with Elvis.
+    Copyright (C) 2014 Suryansh Chandra
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    A file called LICENCE.txt in root folder of this project on GitHub 
+    contains the full copy of the licence agreement. If for some reason 
+    it is missing, see <http://www.gnu.org/licenses/>
+
+	The below proceedure requires that you install third-party software. Those are excluded from the licence agreement referred to above. In all probability they all have their own licences.
+
+---------------------------------------------------------------
+
+
+Before beginning, it might be good to familiarize yourself a bit with the specific hardware. More information about:
+USB2Dynamixel: http://support.robotis.com/en/product/auxdevice/interface/usb2dxl_manual.htm
+SMPS2Dynamixel: http://www.robotis.us/smps2dynamixel/ 
+AX-12A: http://support.robotis.com/en/product/dynamixel/ax_series/dxl_ax_actuator.htm
+
+
+HARDWARE SETUP:
+---------------
+
+1. There's two types of ports on the USB2Dynamixel: TTL(3-pin) & RS485(4-pin). We're only going to use the TTL port all through. Wire up the TTL port on the USB2Dynamixel to any one of the 2 TTL ports SMPS2Dynamixel Use the Dynamixel 3-pin cables to do this. Don't plug it into the USB port just yet.
+
+2. Wire up the other TTL port on the SMPS2Dynamixel to any one of the 2 ports on a Dynamixel AX-12A servo.
+
+3. Plug in the power supply into the SMPS2Dynamixel and switch it on. You're now ready to setup the servo. While building Elvis, you will need to only swap one servo after another and set it up before physically putting it into Elvis.
+
+4. Now follow through the software setup.
+
+
+SOFTWARE SETUP:
+---------------
+
+1. Download and install the latest version of the RoboPlus software from the list on this page: http://www.robotis.com/download/software/RoboPlus%28v1.1.3.0%29.exe
+
+2. Go to Device Manager on your computer (through Control Panel), and make a note of the COM ports on your computer under the Ports (COM & LPT) section. There should already be a few.. atleast 1 COM Port. 
+
+3. With the Device Manager still open, plug the USB2Dynamixel into a USB port on your computer. Windows should find drivers on its own (they automatically installed with RoboPlus) and it should show up as a new COM port in the Device Manager. MAKE A NOTE OF THIS NUMBER, THIS IS IMPORTANT.
+
+4. Start a program called "Dynamixel Wizard" (it installs with RoboPlus).
+
+5. On the top left in this program is a dropdown list to select ports. Select the port number of the USB2Dynamixel (from step 3), and click on the "Open Port" icon right next to the port dropdown list.
+
+6. Click on "Start searching". The list on the left should start to populate with the servos it found. When you see a AX-12A, click "Stop searching". 
+
+7. Click on the servo in the list on the left, and now from the properties that show up on the right side, select ID (3rd in the list). Towards the bottom-right will be another drop-down list called "changeable ID". You need to assign all 8 of your servos unique IDs, sequentially from 1 to 8 and click "Apply". And you can only do this 1 servo at a time, because if 2 servos have the same ID, your computer will not be able to identify them correctly.
+
+8. You also need to go to property number 30 (Goal Position) and hit "Center Position". This is critical for alignment when placing the servo into Elvis. You can spin the dial above the "Center Position" and watch the servo respond in real-time, but in the end you MUST center it again.
+
+9. Once both the properties are set (ID & Goal Position), use "Close port" button on the top bar to turn-off the port or "hang up" the phone.
+
+10. Repeat steps 5-9 for all 8 servos.
+
+6. Download the Dynamixel SDK from this page (depending on your version of Windows):
+http://support.robotis.com/en/software/dynamixel_sdk/usb2dynamixel/usb2dxl_windows.htm
