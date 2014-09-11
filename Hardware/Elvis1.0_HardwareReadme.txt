@@ -1,4 +1,4 @@
-1. Purchase all parts as listed in the BillOfMaterials.xls.
+1. Purchase all parts as listed in the BillOfMaterials.xlsx in the Hardware folder.
 
 2. Open Elvis1.0_LaserCut2d.3dm with Rhino 5.0 or above.
 
